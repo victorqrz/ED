@@ -1,5 +1,14 @@
 #include <stdio.h>
 
+void vogalFilter(char *letter);
+
+int main() {
+  char *s = "victor";
+  vogalFilter(s);
+
+  return 0;
+}
+
 void vogalFilter(char *letter) {
   int i;
   while(*letter) {
@@ -10,11 +19,4 @@ void vogalFilter(char *letter) {
     }
     *(letter++);
   }
-}
-
-int main() {
-  char *s = "victor";
-  vogalFilter(s);
-
-  return 0;
 }

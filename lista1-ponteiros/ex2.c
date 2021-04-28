@@ -1,26 +1,6 @@
 #include <stdio.h>
 
-int verifyArray(int vet[10]){
-  int i, media, total=vet[0], *maior=&vet[0], *menor=&vet[0];
-
-  for(i=1; i<10; i++){
-    if(vet[i] > *maior){
-      maior = &vet[i];
-    }
-    if(vet[i] < *menor){
-      menor = &vet[i];
-    }
-    total+=vet[i];
-  }
-
-  media = total/10;
-
-  printf("Endereco primeiro elemento: %p | endereco ultimo elemento: %p\n", &vet[0], &vet[9]);
-  printf("Maior: %d | Endereco: %p\n", *maior, maior);
-  printf("Menor: %d | Endereco: %p\n", *menor, menor);
-
-  return media;
-};
+int verifyArray(int vet[10]);
 
 int main() {
   int v1[10] = {2, 2, 10, 4, 20, 6, 7, 10, 1, 8};
@@ -49,3 +29,25 @@ int main() {
 
   return 0;
 }
+
+int verifyArray(int vet[10]){
+  int i, media, total=vet[0], *maior=&vet[0], *menor=&vet[0];
+
+  for(i=1; i<10; i++){
+    if(vet[i] > *maior){
+      maior = &vet[i];
+    }
+    if(vet[i] < *menor){
+      menor = &vet[i];
+    }
+    total+=vet[i];
+  }
+
+  media = total/10;
+
+  printf("Endereco primeiro elemento: %p | endereco ultimo elemento: %p\n", &vet[0], &vet[9]);
+  printf("Maior: %d | Endereco: %p\n", *maior, maior);
+  printf("Menor: %d | Endereco: %p\n", *menor, menor);
+
+  return media;
+};
